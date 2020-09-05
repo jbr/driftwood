@@ -1,4 +1,17 @@
+//! # driftwood
+//! Some logs on the [tide](https://github.com/http-rs/tide)
+
 #![allow(clippy::print_literal)]
+#![forbid(unsafe_code, future_incompatible)]
+#![deny(
+    missing_debug_implementations,
+    nonstandard_style,
+    missing_docs,
+    unreachable_pub,
+    missing_copy_implementations,
+    unused_qualifications
+)]
+
 use chrono::offset::Local;
 use colored::*;
 use tide::{
@@ -10,6 +23,8 @@ use size::{Base, Size, Style};
 
 struct LogMiddlewareHasBeenRun;
 
+/// Apache combined format
+#[derive(Debug, Copy, Clone)]
 pub struct ApacheCombinedLogger;
 #[tide::utils::async_trait]
 impl<T: Clone + Send + Sync + 'static> tide::Middleware<T> for ApacheCombinedLogger {
@@ -53,6 +68,8 @@ impl<T: Clone + Send + Sync + 'static> tide::Middleware<T> for ApacheCombinedLog
     }
 }
 
+/// Apache common log format
+#[derive(Debug, Copy, Clone)]
 pub struct ApacheCommonLogger;
 #[tide::utils::async_trait]
 impl<T: Clone + Send + Sync + 'static> tide::Middleware<T> for ApacheCommonLogger {
@@ -93,6 +110,8 @@ impl<T: Clone + Send + Sync + 'static> tide::Middleware<T> for ApacheCommonLogge
     }
 }
 
+/// Development logger
+#[derive(Debug, Copy, Clone)]
 pub struct DevLogger;
 #[tide::utils::async_trait]
 impl<T: Clone + Send + Sync + 'static> tide::Middleware<T> for DevLogger {
