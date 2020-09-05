@@ -1,3 +1,4 @@
+#![allow(clippy::print_literal)]
 use chrono::offset::Local;
 use colored::*;
 use tide::{
