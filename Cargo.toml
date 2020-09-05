@@ -1,0 +1,17 @@
+[package]
+name = "driftwood"
+version = "0.0.1"
+authors = ["Jacob Rothstein <hi@jbr.me>"]
+edition = "2018"
+description = "a log on the tide"
+keywords = ["tide", "logger"]
+license = "MIT OR Apache-2.0"
+readme = "README.md"
+repository = "https://github.com/jbr/driftwood"
+
+
+[dependencies]
+tide = "0.13.0"
+chrono = "0.4.15"
+colored = "2.0.0"
+size = "0.1.2"
