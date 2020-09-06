@@ -42,7 +42,7 @@ Example:
 ### Dev logger
 ```rust
 let mut app = tide::new();
-app.with(driftwood::DevLogger); // or ApacheCombinedLogger or ApacheCommonLogger
+app.with(driftwood::DevLogger);
 ```
 
 This logger colors the status code based on the status range and is
