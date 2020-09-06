@@ -52,9 +52,10 @@ Example:
 `GET http://localhost:8080/some/path 200 3.289292ms 227bytes`
 
 # Intent
-Eventually, this crate intends to support much of the functionality in
-[https://www.npmjs.com/package/morgan](morgan) and may eventually
-support output other than stdout.
+This crate intends to support much of the functionality in
+[morgan](https://www.npmjs.com/package/morgan) including custom log
+formats and may eventually support writing to outputs other than
+stdout.
 
 ## Safety
 This crate uses ``#![deny(unsafe_code)]`` to ensure everything is implemented in
