@@ -6,7 +6,7 @@ use tide::{Request, Result};
 ///
 /// This logger colors the status code based on the status range
 /// Example:
-/// GET http://localhost:8080/some/path 200 3.289292ms 227bytes
+/// `GET http://localhost:8080/some/path 200 3.289292ms 227bytes`
 
 #[derive(Debug, Copy, Clone)]
 pub struct DevLogger;
