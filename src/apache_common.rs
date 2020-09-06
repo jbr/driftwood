@@ -1,3 +1,4 @@
+#![allow(clippy::print_literal)]
 use crate::LogMiddlewareHasBeenRun;
 use chrono::offset::Local;
 use tide::{Request, Result};
