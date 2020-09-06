@@ -20,6 +20,12 @@
 $ cargo add driftwood
 ```
 
+## Usage
+```rust
+let mut app = tide::new();
+app.with(driftwood::DevLogger); // or ApacheCombinedLogger or ApacheCommonLogger
+```
+
 ## Safety
 This crate uses ``#![deny(unsafe_code)]`` to ensure everything is implemented in
 100% Safe Rust.
