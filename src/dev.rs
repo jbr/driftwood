@@ -39,7 +39,7 @@ impl<T: Clone + Send + Sync + 'static> tide::Middleware<T> for DevLogger {
                 .len()
                 .map(
                     |l| Size::to_string(&Size::Bytes(l), Base::Base10, Style::Smart)
-                        .replace(" ", "")
+                        .replace(' ', "")
                 )
                 .unwrap_or_else(|| String::from("-")),
         );
