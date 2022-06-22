@@ -37,10 +37,9 @@ impl<T: Clone + Send + Sync + 'static> tide::Middleware<T> for DevLogger {
             }),
             len = response
                 .len()
-                .map(
-                    |l| Size::to_string(&Size::Bytes(l), Base::Base10, Style::Smart)
-                        .replace(' ', "")
-                )
+                .map(|l| Size::from_bytes(l as i64)
+                    .to_string(Base::Base10, Style::Smart)
+                    .replace(' ', ""))
                 .unwrap_or_else(|| String::from("-")),
         );
         Ok(response)
