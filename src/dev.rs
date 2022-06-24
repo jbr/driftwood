@@ -1,6 +1,6 @@
 use crate::LogMiddlewareHasBeenRun;
 use colored::*;
-use size::{Base, Size, Style};
+use size::{Base, Size};
 use tide::{Request, Result};
 /// Development logger
 ///
@@ -37,8 +37,10 @@ impl<T: Clone + Send + Sync + 'static> tide::Middleware<T> for DevLogger {
             }),
             len = response
                 .len()
-                .map(|l| Size::from_bytes(l as i64)
-                    .to_string(Base::Base10, Style::Smart)
+                .map(|l| Size::from_bytes(l)
+                    .format()
+                    .with_base(Base::Base10)
+                    .to_string()
                     .replace(' ', ""))
                 .unwrap_or_else(|| String::from("-")),
         );
