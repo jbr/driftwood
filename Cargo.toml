@@ -11,7 +11,7 @@ repository = "https://github.com/jbr/driftwood"
 
 
 [dependencies]
-tide = "0.16.0"
+tide = { version = "0.16.0", default-features = false }
 chrono = "0.4.19"
 colored = "2.0.0"
 size = "0.4.0"
